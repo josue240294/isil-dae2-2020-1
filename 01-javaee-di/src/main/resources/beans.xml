@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="facebook" class="pe.isil.socialnetwork.Facebook"></bean>
+    <bean name="instagram" class="pe.isil.socialnetwork.Instagram"></bean>
+    <bean name="whatsapp" class="pe.isil.socialnetwork.Whatsapp"></bean>
+    <bean name="pinterest" class="pe.isil.socialnetwork.Pinterest"></bean>
+
+    <bean name="gallery" class="pe.isil.application.Gallery">
+
+<!--        <constructor-arg name="sharingApp" ref="instagram"></constructor-arg>-->
+
+        <property name="sharingApp" ref="whatsapp"></property>
+
+    </bean>
+
+
+</beans>
