@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Vendedores add</title>
+</head>
+<body>
+ <div class="container">
+<h3>Agregar Vendedor</h3>
+<div>
+   <form action ="#" th:action="@{/vendedores/create}" method="post" th:object="${vendedor}">
+
+       <div class="form-group">
+           <label for="id">id</label>
+           <input type="text" class="class-controller" id="id"
+                  placeholder="Ingrese el id del vendedor"
+                  th:field="*{id}"
+                  disabled
+           >
+       </div>
+       <div class="form-group">
+           <label for="nombre">nombre</label>
+           <input type="text" class="class-controller" id="nombre"
+                  placeholder="Ingrese nombre"
+                  th:field="*{nombre}" >
+       </div>
+
+       <div class="form-group">
+           <label for="lastNameFather">lastNameFather</label>
+           <input type="text" class="class-controller" id="lastNameFather"
+                  placeholder="Ingrese apellido paterno"
+                  th:field="*{lastNameFather}" >
+       </div>
+
+       <div class="form-group">
+           <label for="lastNameMother">lastNameMother</label>
+           <input type="text" class="class-controller" id="lastNameMother"
+                  placeholder="Ingrese apellido materno"
+                  th:field="*{lastNameMother}" >
+       </div>
+
+       <div class="form-group">
+           <label for="cargo">cargo</label>
+           <input type="text" class="class-controller" id="cargo"
+                  placeholder="Ingrese cargo"
+                  th:field="*{cargo}" >
+       </div>
+
+       <div class="form-group">
+           <label for="direccion">direccion</label>
+           <input type="text" class="class-controller" id="direccion"
+                  placeholder="Ingrese la direccion del vendedor"
+                  th:field="*{direccion}" >
+       </div>
+
+       <div class="form-group">
+           <label for="telefono">telefono</label>
+           <input type="text" class="class-controller" id="telefono"
+                  placeholder="Ingrese el telefono del vendedor"
+                  th:field="*{telefono}" >
+       </div>
+
+
+
+
+
+
+
+      <button type="submit" class="btn btn-primary">
+          Agregar Vendedor
+
+      </button>
+
+   </form>
+</div>
+ </div>
+
+</body>
+</html>

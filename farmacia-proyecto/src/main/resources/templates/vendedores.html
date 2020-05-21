@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>Vendedores</title>
+</head>
+<body>
+<div class="container">
+
+    <h3>Listado de Vendedores</h3>
+    <div class="col-md-12"></div>
+    <a th:href="@{/vendedores/add}"class="btn btn-primary" >agregar vendedor</a>
+</div>
+
+<div th:switch="vendedores">
+    <div th:case="*">
+        <table class="table">
+            <thead>
+          <tr>
+              <th scope="col">id</th>
+              <th scope="col">nombre</th>
+              <th scope="col">lastNameFather</th>
+              <th scope="col">lastNameMother</th>
+              <th scope="col">cargo</th>
+              <th scope="col">direccion</th>
+              <th scope="col">telefono</th>
+          </tr>
+            </thead>
+            <tbody>
+            <tr th:each="vendedor :${vendedores} " >
+                <th scope="row" th:text="${vendedor.id}"></th>
+                <th  th:text="${vendedor.nombre}"></th>
+                <th  th:text="${vendedor.lastNameFather}"></th>
+                <th  th:text="${vendedor.lastNameMother}"></th>
+                <th  th:text="${vendedor.cargo}"></th>
+                <th  th:text="${vendedor.direccion}"></th>
+                <th  th:text="${vendedor.telefono}"></th>
+
+                <td class ="text-right">
+                <div class="btn-group">
+                    <a th:href="@{/vendedores/edit/{id}(id=${vendedor.id})}" class="btn btn-primary">editar</a>
+                    <a th:href="@{/vendedores/delete/{id}(id=${vendedor.id})}"class="btn btn-danger">eliminar</a>
+
+                </div>
+
+                </td>
+
+
+            </tr>
+
+            </tbody>
+
+        </table>
+
+
+    </div>
+
+
+</div>
+
+</body>
+</html>

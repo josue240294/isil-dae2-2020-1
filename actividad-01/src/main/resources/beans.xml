@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean name="messi" class="pe.isil.jugadores.Messi"></bean>
+<bean name="cr7" class="pe.isil.jugadores.Cristiano_Ronaldo"></bean>
+
+    <bean name="barcelona" class="pe.isil.equipo.futbol.Barcelona">
+        <property name="players" ref="messi"></property>
+    </bean>
+
+
+
+</beans>
